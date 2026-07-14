@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>わんにゃんパチンコ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="status-bar" aria-label="ゲーム状況">
+        <section class="status-item">
+          <span>持ち玉</span>
+          <strong id="balls">2,000玉</strong>
+        </section>
+        <section class="status-item">
+          <span>現在モード</span>
+          <strong id="modeName">犬モード</strong>
+        </section>
+        <section class="status-item">
+          <span>抽選回数</span>
+          <strong id="spinCount">0回</strong>
+        </section>
+        <section class="status-item">
+          <span>猫モード残り</span>
+          <strong id="catLeft">-</strong>
+        </section>
+        <section class="status-item">
+          <span>継続回数</span>
+          <strong id="streak">0連</strong>
+        </section>
+        <section class="status-item">
+          <span>残り時間</span>
+          <strong id="holdCount">2:00</strong>
+        </section>
+      </header>
+
+      <section class="machine" id="machine">
+        <div class="machine-timer" id="machineTimer" aria-label="残り時間">
+          <span>TIME</span>
+          <strong>2:00</strong>
+        </div>
+        <div class="mode-telop" id="modeTelop">犬モード ～スポットをねらえ！～</div>
+
+        <section class="lcd" id="lcd">
+          <div class="mode-badge">
+            <img id="modeBadge" src="assets/badge_dog.png" alt="犬モード" />
+          </div>
+          <div class="lcd-copy">
+            <p id="lcdLead">スポットに入ると抽選開始！</p>
+            <h1 id="lcdTitle">ボールをはじいて狙おう</h1>
+          </div>
+          <div class="reels" aria-label="リール">
+            <div class="reel"><img id="reel1" src="assets/symbol_esa.png" alt="エサ" /></div>
+            <div class="reel"><img id="reel2" src="assets/symbol_hone.png" alt="骨" /></div>
+            <div class="reel"><img id="reel3" src="assets/symbol_inu7.png" alt="犬7" /></div>
+          </div>
+          <div class="reach-strip">
+            <img id="reachImage" src="assets/dog_reach_chihuahua.png" alt="リーチ演出" />
+            <div>
+              <span id="reachLabel">犬リーチ</span>
+              <strong id="reachTitle">チワワが走る！</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="board-wrap" aria-label="パチンコ盤面">
+          <canvas id="gameCanvas" width="760" height="720"></canvas>
+        </section>
+        <div class="bottom-marquee" aria-hidden="true">
+          <span>パチンコ（銀玉）を弾こう！</span>
+          <span>パチンコ（銀玉）を弾こう！</span>
+        </div>
+
+        <div class="jackpot-overlay" id="jackpotOverlay" aria-live="polite">
+          <img id="jackpotImage" src="assets/jackpot_new.png" alt="大当たり" />
+          <strong id="jackpotText" class="sr-only">大当たり！</strong>
+          <span id="jackpotSubText">猫モード突入！</span>
+        </div>
+
+        <div class="reach-video-overlay" id="reachVideoOverlay" aria-live="polite">
+          <video id="reachVideo" playsinline preload="auto"></video>
+        </div>
+
+        <div class="game-over-overlay" id="gameOverOverlay" aria-live="polite">
+          <strong>TIME UP</strong>
+          <span id="finalScoreText">スコア 0玉</span>
+          <button id="retryBtn" type="button">リトライ</button>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
