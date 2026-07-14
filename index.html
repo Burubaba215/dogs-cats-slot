@@ -36,7 +36,13 @@
       </header>
 
       <section class="machine" id="machine">
-        <button class="quick-retry-btn" id="quickRetryBtn" type="button">リトライ</button>
+        <div class="quick-status">
+          <button class="quick-retry-btn" id="quickRetryBtn" type="button">リトライ</button>
+          <div class="quick-balls" aria-label="持ち玉">
+            <span>持ち玉</span>
+            <strong id="quickBalls">60玉</strong>
+          </div>
+        </div>
         <div class="machine-timer" id="machineTimer" aria-label="残り時間">
           <span>TIME</span>
           <strong>2:00</strong>

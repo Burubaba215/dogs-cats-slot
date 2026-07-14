@@ -91,11 +91,18 @@ button {
   animation: catFramePulse 0.72s ease-in-out infinite alternate;
 }
 
-.quick-retry-btn {
+.quick-status {
   position: absolute;
   z-index: 8;
   top: 1.1%;
   left: 2.2%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.quick-retry-btn {
   min-width: 76px;
   min-height: 34px;
   padding: 5px 12px;
@@ -109,11 +116,40 @@ button {
   font-weight: 900;
   line-height: 1;
   touch-action: manipulation;
+  pointer-events: auto;
 }
 
 .quick-retry-btn:active {
   transform: translateY(2px);
   box-shadow: 0 2px 0 rgba(79, 35, 9, 0.56), 0 0 10px rgba(255, 211, 62, 0.28);
+}
+
+.quick-balls {
+  min-width: 92px;
+  min-height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 2px solid rgba(255, 220, 93, 0.88);
+  border-radius: 999px;
+  background: rgba(18, 12, 10, 0.86);
+  color: #fff8c8;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.44), 0 0 12px rgba(255, 211, 62, 0.25);
+  line-height: 1;
+}
+
+.quick-balls span {
+  display: block;
+  font-size: clamp(0.48rem, 1.8vw, 0.64rem);
+  font-weight: 900;
+}
+
+.quick-balls strong {
+  display: block;
+  margin-top: 2px;
+  font-size: clamp(0.72rem, 2.5vw, 0.95rem);
+  font-weight: 900;
 }
 
 .machine-timer {

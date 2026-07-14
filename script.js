@@ -60,6 +60,7 @@ const els = {
   catLeft: document.querySelector("#catLeft"),
   streak: document.querySelector("#streak"),
   holdCount: document.querySelector("#holdCount"),
+  quickBalls: document.querySelector("#quickBalls"),
   machine: document.querySelector("#machine"),
   machineTimer: document.querySelector("#machineTimer"),
   modeTelop: document.querySelector("#modeTelop"),
@@ -344,6 +345,7 @@ function buildBoard() {
 function renderStatus() {
   const isCat = state.mode === "cat";
   els.balls.textContent = formatBalls(state.balls);
+  els.quickBalls.textContent = formatBalls(state.balls);
   els.modeName.textContent = isCat ? "猫モード" : "犬モード";
   els.spinCount.textContent = `${state.totalSpins}回`;
   els.catLeft.textContent = isCat ? `${state.catLeft}回` : "-";
