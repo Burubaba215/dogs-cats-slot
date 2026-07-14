@@ -82,6 +82,7 @@ const els = {
   gameOverOverlay: document.querySelector("#gameOverOverlay"),
   finalScoreText: document.querySelector("#finalScoreText"),
   retryBtn: document.querySelector("#retryBtn"),
+  quickRetryBtn: document.querySelector("#quickRetryBtn"),
 };
 
 const ctx = els.canvas.getContext("2d");
@@ -916,6 +917,7 @@ function resetGame() {
 }
 
 els.retryBtn.addEventListener("click", resetGame);
+els.quickRetryBtn.addEventListener("click", resetGame);
 
 buildBoard();
 renderStatus();
